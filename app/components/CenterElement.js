@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'white',
     },
-    /*input: {
+    input: {
         width: 300,
         height: 44,
         padding: 10,
         marginBottom: 10,
-    },*/
+    },
 });
 
 export default class CenterElement extends Component {
@@ -74,7 +74,7 @@ export default class CenterElement extends Component {
                 placeholder="Search"
                 onChangeText={onSearchTextChange}
                 value={searchValue}
-               // style={styles.input}
+                style={styles.input}
                 />
             </View>
             )
