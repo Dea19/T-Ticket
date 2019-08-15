@@ -1,6 +1,8 @@
 import React from 'react';
 import SplashScreen from "./app/SplashScreen";
 import NavigationDrawer from "./Menu";
+import CustomHeader from "./app/components/CustomHeader";
+
 
 
 export default class App extends React.Component {
@@ -38,6 +40,7 @@ export default class App extends React.Component {
         }
         return (
             <NavigationDrawer/>
+        //   <CustomHeader/>
 
 
         );

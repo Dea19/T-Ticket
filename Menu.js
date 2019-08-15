@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, Image, TouchableOpacity } from 'react-native';
+import React, {Component} from 'react';
+import {View, Image, TouchableOpacity} from 'react-native';
 import {
     createDrawerNavigator,
     createStackNavigator,
@@ -9,7 +9,7 @@ import {Header, Icon} from 'react-native-elements'
 import Home from './app/pages/Home';
 import Screen2 from './app/pages/Screen2';
 import Screen3 from './app/pages/Screen3';
-import {system} from './app/config/const'
+import CustomHeader from "./app/components/CustomHeader";
 
 class NavigationDrawerStructure extends Component {
     toggleDrawer = () => {
@@ -17,15 +17,13 @@ class NavigationDrawerStructure extends Component {
         this.props.navigationProps.toggleDrawer();
     };
 
+
     render() {
+
         return (
-            <View style={{ flexDirection: 'row' }}>
-                <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
-                    <Icon
-                        name='menu'
-                        color='#fff'/>
-                </TouchableOpacity>
-            </View>
+
+            <CustomHeader navProps={this.toggleDrawer.bind(this)}/>
+
         );
     }
 }
@@ -34,14 +32,15 @@ const Screen1_StackNavigator = createStackNavigator({
     //All the screen from the Home will be indexed here
     First: {
         screen: Home,
-        navigationOptions: ({ navigation }) => ({
-            title: system.title,
-            headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+        navigationOptions: ({navigation}) => ({
+            //  title: system.title,
+            headerLeft: <NavigationDrawerStructure navigationProps={navigation}/>,
             headerStyle: {
                 backgroundColor: '#FF9800',
             },
-            headerRight: <Header/>,
+            //  headerRight: <CustomHeader/>,
             headerTintColor: '#fff',
+            //header: <CustomHeader/>
         }),
     },
 });
@@ -50,9 +49,9 @@ const Screen2_StackNavigator = createStackNavigator({
     //All the screen from the Screen2 will be indexed here
     Second: {
         screen: Screen2,
-        navigationOptions: ({ navigation }) => ({
-            title: system.title,
-            headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+        navigationOptions: ({navigation}) => ({
+            //title: system.title,
+            headerLeft: <NavigationDrawerStructure navigationProps={navigation}/>,
             headerStyle: {
                 backgroundColor: '#FF9800',
             },
@@ -65,9 +64,9 @@ const Screen3_StackNavigator = createStackNavigator({
     //All the screen from the Screen3 will be indexed here
     Third: {
         screen: Screen3,
-        navigationOptions: ({ navigation }) => ({
-            title: system.title,
-            headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+        navigationOptions: ({navigation}) => ({
+
+            headerLeft: <NavigationDrawerStructure navigationProps={navigation}/>,
             headerStyle: {
                 backgroundColor: '#FF9800',
             },
@@ -82,7 +81,7 @@ const DrawerNavigator = createDrawerNavigator({
         screen: Screen1_StackNavigator,
         navigationOptions: {
             drawerLabel: 'Home',
-            drawerIcon: ({ tintColor }) => (<Icon name="home" size={24} style={{ color: tintColor }} />),
+            drawerIcon: ({tintColor}) => (<Icon name="home" size={24} style={{color: tintColor}}/>),
 
         },
     },
