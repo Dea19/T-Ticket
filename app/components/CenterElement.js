@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'white',
     },
-    input: {
+   /* input: {
         width: 300,
         height: 44,
         padding: 10,
         marginBottom: 10,
-    },
+    },*/
 });
 
 export default class CenterElement extends Component {
@@ -49,7 +49,6 @@ export default class CenterElement extends Component {
                 textInput: nextIsSearchActive,
             });
 
-
             Animated.timing(this.state.opacityValue, {
                 toValue: 1,
                 duration: 112,
@@ -74,11 +73,12 @@ export default class CenterElement extends Component {
                 placeholder="Search"
                 onChangeText={onSearchTextChange}
                 value={searchValue}
-                style={styles.input}
+                //style={styles.input}
                 />
             </View>
             )
         }
+       // console.log(opacityValue)
        // console.log(textInput)
         return (
             <Animated.View style={[styles.container, { opacity: opacityValue }]}>

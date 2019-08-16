@@ -2,15 +2,14 @@
 import React, { Component } from 'react';
 //import react in our code.
 import { StyleSheet, View, Text } from 'react-native';
+import BottomTabNavigator from "../../BottomTabNavigator";
 // import all basic components
 
 export default class Screen3 extends Component {
     //Screen3 Component
     render() {
         return (
-            <View style={styles.MainContainer}>
-                <Text style={{ fontSize: 23 }}> Screen 3 </Text>
-            </View>
+           <BottomTabNavigator/>
         );
     }
 }

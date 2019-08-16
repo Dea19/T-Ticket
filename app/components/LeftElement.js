@@ -7,8 +7,8 @@ import {Icon, Text} from "react-native-elements";
 
 const styles = StyleSheet.create({
     container: {
-       /* flex: 1,
-        //marginLeft: 130,*/
+        //flex: 1,
+      // marginLeft: 22,
     }
 });
 export default class LeftElement extends Component {

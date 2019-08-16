@@ -6,6 +6,7 @@ export default class RightElement extends Component {
 
     render() {
         const { onSearchPress, onSearchClear, isSearchActive, searchValue } = this.props;
+       // console.log(onSearchPress, isSearchActive)
         if (isSearchActive && searchValue.length === 0) {
             return null;
         }
@@ -32,7 +33,7 @@ export default class RightElement extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        marginLeft: 130,
+        /*flex: 1,
+        marginLeft: 200,*/
     }
 });

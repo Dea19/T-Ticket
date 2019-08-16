@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import {View, Image, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 import {
     createDrawerNavigator,
     createStackNavigator,
@@ -10,6 +10,7 @@ import Home from './app/pages/Home';
 import Screen2 from './app/pages/Screen2';
 import Screen3 from './app/pages/Screen3';
 import CustomHeader from "./app/components/CustomHeader";
+import { COLOR } from 'react-native-material-ui/src';
 
 class NavigationDrawerStructure extends Component {
     toggleDrawer = () => {
@@ -36,7 +37,10 @@ const Screen1_StackNavigator = createStackNavigator({
             //  title: system.title,
             headerLeft: <NavigationDrawerStructure navigationProps={navigation}/>,
             headerStyle: {
+
                 backgroundColor: '#FF9800',
+                //width:Math.round(Dimensions.get('window').width),
+                // elevation: 4,
             },
             //  headerRight: <CustomHeader/>,
             headerTintColor: '#fff',

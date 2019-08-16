@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {SearchBar} from 'react-native-elements';
 import TabHelper from "../../TabHelper";
+import BottomTabNavigator from "../../BottomTabNavigator";
 
 export default class Home extends Component {
 
